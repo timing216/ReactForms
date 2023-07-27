@@ -13,7 +13,7 @@ const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup");
 const result = await response.json();
 console.log(result);
 
-export default function SignUpForm() {
+export default function SignUpForm({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
