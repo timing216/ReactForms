@@ -1,17 +1,4 @@
-// const SignUpForm = () => {
-//   return (
-//     <>
-//       <h2>Sign Up!</h2>
-//     </>
-//   );
-// };
-
-// export default SignUpForm;
 import { useState } from "react";
-
-const response = await fetch("https://fsa-jwt-practice.herokuapp.com/signup");
-const result = await response.json();
-console.log(result);
 
 export default function SignUpForm({ setToken }) {
   const [username, setUsername] = useState("");
@@ -26,6 +13,7 @@ export default function SignUpForm({ setToken }) {
       );
       const result = await response.json();
       console.log(result);
+      setToken(result.token);
     } catch (error) {
       setError(error.message);
     }
